@@ -1,0 +1,18 @@
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: violet;
+}
+h1{
+  color:darkorange;
+  font-style: italic;
+  background-color: darkblue;
+}
+h2{
+  font-style: oblique;
+  border-bottom-color: coral;
+  border: 3px;
+}
+div{
+  text-align: center;
+}
