@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-import { TurmaComponent } from './turma/turma.component';
-import { AlunoComponent } from './aluno/aluno.component';
+import { TurmaComponent } from './turma.component';
+import { AlunoComponent } from './aluno.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
