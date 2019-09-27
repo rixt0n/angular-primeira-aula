@@ -9,19 +9,24 @@ import {Turma} from '../turma';
   styleUrls: ['./turma.component.css']
 })
 export class TurmaComponent implements OnInit {
-  turmaCorrente:Turma = {
-
-    nome:"TPSI",
-    descricao:"Turma de programação",
-    nivel:5
-
-  };
+  editar:boolean;
+  turmaCorrente:Turma;
   /*nomeTurma:string = "TPSI";
   descricao:string = "Turma de progrmação da Atec";
   nivel:number = 42;*/
-  constructor() { }
+  constructor() { 
+    this.turmaCorrente = {
+      nome:"tpsi",
+      descricao:"a turma maior",
+      nivel: 5,
+    };
+    this.editar = true;
+  }
 
   ngOnInit() {
+  }
+  mudarEditar(){
+    this.editar = !this.editar;
   }
 
 }

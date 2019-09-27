@@ -1,1 +1,6 @@
-<p>jhgihjg</p>
+<p><span *ngIf ="!editar"> {{turmaCorrente.nome}}</span>
+
+<input *ngIf="editar"  [(ngModel)] = "turmaCorrente.nome" (blur)="mudarEditar"/> 
+
+<!--<button (click)="mudarEditar()">Editar</button>-->
+

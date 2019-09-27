@@ -1,3 +1,8 @@
-<p>
-aluno works!
-</p>
+<p>Isto sao os alunos!</p>
+
+<ul>
+  <li *ngFor ="let aluno of alunos" (click="selecionarAluno(aluno)")>
+    {{aluno.nome}} 
+  </li>
+</ul>
+
