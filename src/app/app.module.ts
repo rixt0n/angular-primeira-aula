@@ -7,10 +7,12 @@ import { HelloComponent } from './hello.component';
 import { TurmaComponent } from './turma/turma.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { DetalhesAlunoComponent } from './detalhes-aluno/detalhes-aluno.component';
+import { AlunosServiceService } from './alunos-service.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, TurmaComponent, AlunoComponent, DetalhesAlunoComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [AlunosServiceService]
 })
 export class AppModule { }

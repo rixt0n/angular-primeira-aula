@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Aluno} from '../aluno';
-import {MockAlunos} from '../mock-alunos';
+import { Aluno } from '../aluno';
+import {AlunosServiceService} from '../alunos-service.service';
+
 
 
 @Component({
@@ -9,19 +10,33 @@ import {MockAlunos} from '../mock-alunos';
   styleUrls: ['./aluno.component.css']
 })
 export class AlunoComponent implements OnInit {
+  alunos:Aluno[];
 
-  alunos:Aluno[] = MockAlunos;
-  alunoSelecionado:Aluno;
-  constructor() { 
+  alunoSeleccionado:Aluno;
+  constructor(private alunosService:AlunosServiceService) { 
    
     
   }
 
   ngOnInit() {
+    this.getAlunos();
+  }
+  // seleccionarAluno(index){
+  //   this.alunoSeleccionado = this.alunosService.getAluno(index);
+  // }
+
+   seleccionarAluno(index){
+    this.alunosService.setAluno(index);
   }
 
-  selecionarAluno(aluno){
-    this.alunoSelecionado = aluno;
-  }
+  // getAlunos(){
+  //   this.alunos = this.alunosService.getAlunos();
+  // }
+
+  //codigo em baixo e para utilizar o observable
+  getAlunos(){
+    this.alunosService.getAlunos()
+      .subscribe(alunos => this.alunos = alunos); //o segundo alunos pode ser o que quisermos, ou seja associamos alunos a dados
+ }
 
 }

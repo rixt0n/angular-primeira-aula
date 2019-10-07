@@ -1,8 +1,28 @@
 <p>Isto sao os alunos!</p>
 
-<ul>
+<!-- <ul>
   <li *ngFor ="let aluno of alunos" (click="selecionarAluno(aluno)")>
     {{aluno.nome}} 
   </li>
-</ul>
+</ul> -->
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <ul>
+      <li *ngFor="let aluno of alunos; let i = index" (click)="seleccionarAluno(aluno)">
+        {{aluno.nome | uppercase}}
+        </li>
+    </ul>
+    </div>
+    <div class="container-fluid col-md-4">
+
+      <app-detalhes-aluno [aluno]="alunoSeleccionado" ></app-detalhes-aluno>
+  
+    </div>
+      
+</div>
+</div>
+
+
+    
