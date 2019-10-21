@@ -10,8 +10,11 @@
   <div class="row">
     <div class="col-md-4">
       <ul>
-      <li *ngFor="let aluno of alunos; let i = index" (click)="seleccionarAluno(aluno)">
+      <!-- <li *ngFor="let aluno of alunos; let i = index" (click)="seleccionarAluno(aluno)">
         {{aluno.nome | uppercase}}
+        </li> -->
+        <li *ngFor="let aluno of alunos" (click)="seleccionarAluno(aluno)">
+        {{aluno.name.first | uppercase}}
         </li>
     </ul>
     </div>

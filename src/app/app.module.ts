@@ -9,8 +9,11 @@ import { AlunoComponent } from './aluno/aluno.component';
 import { DetalhesAlunoComponent } from './detalhes-aluno/detalhes-aluno.component';
 import { AlunosServiceService } from './alunos-service.service';
 
+import { HttpClientModule }    from '@angular/common/http';
+
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
   declarations: [ AppComponent, HelloComponent, TurmaComponent, AlunoComponent, DetalhesAlunoComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AlunosServiceService]

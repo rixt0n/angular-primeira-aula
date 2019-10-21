@@ -25,8 +25,12 @@ export class AlunoComponent implements OnInit {
   //   this.alunoSeleccionado = this.alunosService.getAluno(index);
   // }
 
-   seleccionarAluno(index){
-    this.alunosService.setAluno(index);
+  //  seleccionarAluno(index){
+  //   this.alunosService.setAluno(index);
+  // }
+
+  seleccionarAluno(aluno){
+    this.alunosService.setAluno(aluno);
   }
 
   // getAlunos(){
@@ -34,9 +38,14 @@ export class AlunoComponent implements OnInit {
   // }
 
   //codigo em baixo e para utilizar o observable
-  getAlunos(){
+//   getAlunos(){
+//     this.alunosService.getAlunos()
+//       .subscribe(alunos => this.alunos = alunos); //o segundo alunos pode ser o que quisermos, ou seja associamos alunos a dados
+//  }
+
+getAlunos(){
     this.alunosService.getAlunos()
-      .subscribe(alunos => this.alunos = alunos); //o segundo alunos pode ser o que quisermos, ou seja associamos alunos a dados
+      .subscribe(alunos => this.alunos = alunos.results); //o segundo alunos pode ser o que quisermos, ou seja associamos alunos a dados
  }
 
 }
