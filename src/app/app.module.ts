@@ -10,12 +10,20 @@ import { DetalhesAlunoComponent } from './detalhes-aluno/detalhes-aluno.componen
 import { AlunosServiceService } from './alunos-service.service';
 
 import { HttpClientModule }    from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+        { path: '', component: AlunoComponent },
+        { path: 'alunos/:alunoId', component: DetalhesAlunoComponent },
+        { path: 'alunos', component: AlunoComponent}
+      ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes) ],
   declarations: [ AppComponent, HelloComponent, TurmaComponent, AlunoComponent, DetalhesAlunoComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [AlunosServiceService]
+  providers: [AlunosServiceService],
+  exports: [ RouterModule ]
 })
 export class AppModule { }
